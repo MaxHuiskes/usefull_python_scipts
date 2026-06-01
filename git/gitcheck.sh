@@ -46,7 +46,10 @@ find "$PARENT_DIR" \
             --regexp-ignore-case \
             --since="$TARGET_DATE 00:00:00" \
             --until="$TARGET_DATE 23:59:59" \
-            --oneline --shortstat --color)
+            --decorate=short \
+            --format="%h %d %ad %s" \
+            --date=format-local:'%Y-%m-%d %H:%M:%S' \
+            --shortstat)
         
         if [ -n "$logs" ]; then
             echo -e "\033[1;32mRepo: $repo_dir\033[0m"

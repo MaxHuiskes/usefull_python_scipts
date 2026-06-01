@@ -19,21 +19,13 @@ output_file = f"{filename_without_ext}.svg"
 
 print(f"Converting '{input_file}' to '{output_file}'...")
 
-# Convert PNG to SVG
-vtracer.convert_image_to_svg_py(
-    input_file,
-    output_file,
-    colormode='color',
-    hierarchical='cutout',
-    mode='spline',
-    filter_speckle=4,
-    color_precision=6,
-    layer_difference=16,
-    corner_threshold=60,
-    length_threshold=10,
-    max_iterations=10,
-    splice_threshold=45,
-    path_precision=3
-)
+if __name__ == "__main__":
+    input_file = sys.argv[1] if len(sys.argv) > 1 else "input.png"
+    print(f"Converting '{input_file}'...")
+    try:
+        output_file = convert_png_to_svg(input_file)
+    except FileNotFoundError as exc:
+        print(f"Error: {exc}")
+        sys.exit(1)
 
 print(f"Done! Saved to {output_file}")

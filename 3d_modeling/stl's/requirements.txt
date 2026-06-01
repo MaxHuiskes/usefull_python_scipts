@@ -1,0 +1,10 @@
+Pillow
+numpy
+scikit-image
+trimesh
+scipy
+vtracer
+lxml
+svg.path
+shapely
+rtree

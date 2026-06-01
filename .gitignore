@@ -1,1 +1,4 @@
 .DS_Store
+3d_modeling/stl's/_pycache_
+3d_modeling/stl's/.venv/
+image_processing/_pycache_

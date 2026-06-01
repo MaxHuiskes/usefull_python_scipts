@@ -37,6 +37,10 @@ Personal collection of scripts and utilities, organized by category.
 - **gitcheck.sh** — Lists git activity for a given date and optional author in all repos under a directory. Skips `vendor/` and `contrib/`.
   - Usage: `./gitcheck.sh [-f] YYYY-MM-DD [directory] [username]`
   - `-f`: run `git fetch --all` in each repo before checking.
+- **monthly_work_log.py** — Same scan for every day in a month; writes `git/work/YYYY-MM-DD.md` per active day.
+  - Usage: `python monthly_work_log.py [YYYY-MM] [directory] [author]`
+  - `-f`: fetch each repo once before checking. Default scan: `~/Desktop`. Output always under `git/work/` unless `-o` is set.
+  - Author: use `Max Huiskes\|max.huiskes` (or omit) to match name and email.
 
 ## Getting Started
 
